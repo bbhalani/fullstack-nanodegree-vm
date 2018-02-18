@@ -1,0 +1,24 @@
+{%extends "main.html"%}
+{%block content%}
+    <article>
+        <div class="jumbotron text-center">
+            <div class="container">
+               
+                <div class="card bg-light text-center">
+                    <h1 class="card-header">{{item.itemName}}</h1>
+                    <div class="card-body">
+                        <p class="card-text">{{item.description}}</p>
+                    </div>
+                    {% if item.user_id == userid %}
+                    <div class="card-footer">
+                        <a href="{{url_for('editCatalogItem', category_id = category.id, item_id=item.id ) }}" class="btn btn-sm btn-outline-secondary">Edit {{item.itemName}}</a>
+                        <a href="{{url_for('deleteCatalogItem', category_id = category.id, item_id=item.id ) }}" class="btn btn-sm btn-outline-secondary">Delete {{item.itemName}}</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </article>
+    {%endblock%}

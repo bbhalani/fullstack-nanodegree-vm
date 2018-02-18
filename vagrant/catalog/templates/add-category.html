@@ -1,0 +1,26 @@
+{%extends "main.html"%}
+{%block content%}
+
+    <article>
+        <div class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Add new category</h1>
+                
+
+                <hr class="my-4">
+                <form action="#" method='post'>
+                    <div class="form-group row">
+                        <label for="catName" class="col-sm-2 col-form-label">Category Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name='catName' id="catName" placeholder="Enter category name">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">Add</button>
+                </form>
+            </div>
+
+        </div>
+        </div>
+    </article>
+    
+	{%endblock%}

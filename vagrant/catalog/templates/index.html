@@ -1,0 +1,33 @@
+{%extends "main.html"%}
+{%block content%}
+	<article>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h1 class="display-4">Categories</h1>
+				<hr class="my-4">
+				<a href="{{url_for('newCategory')}}" class="btn btn-sm btn-light">
+					<h3> Add new Category </h3>
+				</a>
+				{% for category in categories %}
+				
+				<hr class="my-4">
+				<div class="card bg-light text-center">
+					<a class="card-header badge badge-light" href="{{url_for('showItemsList', category_id = category.id)}}">
+						<h1>{{category.catName}}</h1>
+					</a>
+					{% if category.user_id == userid %}
+					<div class="card-body" id="editDelete">
+						<a href="{{url_for('editCategory',category_id = category.id)}}" class="btn btn-sm btn-outline-secondary">Edit {{category.catName}}</a>
+						<a href="{{url_for('deleteCategory',category_id = category.id)}}" class="btn btn-sm btn-outline-secondary">Delete {{category.catName}}</a>
+					</div>
+					{% endif %}
+				</div>
+
+				{% endfor %}
+			</div>
+
+		</div>
+		</div>
+	</article>
+	
+	{%endblock%}

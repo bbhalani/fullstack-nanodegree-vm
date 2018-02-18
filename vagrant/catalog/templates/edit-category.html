@@ -1,0 +1,26 @@
+{%extends "main.html"%}
+{%block content%}
+    <article>
+        <div class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Edit category {{category.catName}}</h1>
+              
+
+                <hr class="my-4">
+                <form action="{{ url_for('editCategory',category_id = category.id)}}" method='post'>
+                    <div class="form-group row">
+                        <label for="catName" class="col-sm-2 col-form-label">Category Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name='catName' id="catName" placeholder="{{category.catName}}">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-outline-secondary" value="Edit">Edit</button>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{url_for('showCategories')}}"> Cancel </a>
+                </form>
+            </div>
+
+        </div>
+        </div>
+    </article>
+   
+	{%endblock%}

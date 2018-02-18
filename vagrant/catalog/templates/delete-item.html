@@ -1,0 +1,26 @@
+{%extends "main.html"%}
+{%block content%}
+    <article>
+        <div class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Delete item {{item.itemName}}</h1>
+                
+
+                <hr class="my-4">
+                <div class="card bg-light text-center">
+                    <h1 class="card-header">Are you sure you want to delete {{item.itemName}}?</h1>
+                    <div class="card-body">
+                        <form action="#" method='post'>
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                            <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('showItemsDetails', item_id=item.id, category_id=item.category_id)}}"> Cancel </a>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </article>
+
+        {%endblock%}

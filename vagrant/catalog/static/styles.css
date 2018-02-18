@@ -1,0 +1,15 @@
+.jumbotron{
+    height: 100vh !important;
+}
+#signinButton{
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+ul {
+    list-style-type: none;
+    padding-left:0;
+  }
+  

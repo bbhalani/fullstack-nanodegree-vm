@@ -1,0 +1,31 @@
+{%extends "main.html"%} {%block content%}
+
+<article>
+    <div class="jumbotron text-center">
+        <div class="container">
+            {% if categories !=[] %} {% for category in categories %}
+            <div class="card bg-light text-center">
+                <div class="card-header"><h4>Items in {{category.catName}}</h4></div>
+
+                {% if items !=[] %} {% for i in items %} {% if i.category_id == category.id %}
+                <div class="card-body">
+
+                    <a class="card-title badge badge-light" href="{{url_for('showItemsDetails', category_id = category.id, item_id=i.id, userid=userid ) }}">
+                        <h5>{{i.itemName}}</h5>
+                    </a>
+                </div>
+                {% endif %} {% endfor %} {% else %}
+                <div class="card-footer">
+                    <h3 class="alert alert-info" role="alert"> There are no items in this category</h3>
+                    {% endif %} {% endfor %} {% else %}
+                    <h3 class="alert alert-info" role="alert"> There are no categories</h3>
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+</article>
+{%endblock%}
